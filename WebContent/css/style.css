@@ -1,0 +1,42 @@
+.centerRegister {
+	display: flex;
+	justify-content: center;
+}
+
+.loginPageButtons {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	padding: 10px 0px 0px 0px;
+}
+
+.editButton {
+	margin-left: 100px;
+	position: absolute;
+	top: -15px;
+	right: 0;
+}
+
+.homeButtons {
+	margin: 100px 70px 0px 70px;
+	display: flex;
+	justify-content: space-between;
+	animation: fadein 5s both;
+	animation-delay: 3s;
+
+}
+
+.fadeTitleHome{
+	
+	animation: fadein 5s both;
+}
+
+.fadeSubtitleHome {
+	animation: fadein 5s both;
+	animation-delay: 1s;
+}
+
+@keyframes fadein {
+	from {opacity: 0;}
+	to {opacity: 1;}
+	}
