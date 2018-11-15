@@ -36,7 +36,7 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession(false);	//Creates Session
 		session.invalidate();
 		response.sendRedirect("logout.jsp");
 		doGet(request, response);

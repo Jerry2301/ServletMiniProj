@@ -1,9 +1,5 @@
 package com.model;
 
-/**
- * @author Rahul
- *
- */
 public class Register {
 	private int rno;
 	private String fname;
@@ -11,6 +7,8 @@ public class Register {
 	private String email;
 	private String pass;
 	private double bal;
+	
+	//Getter and Setters
 	public String getLname() {
 		return lname;
 	}

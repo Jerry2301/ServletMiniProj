@@ -14,7 +14,7 @@
 
 <body>
 
-
+<!-- Logout Form -->
 <section class="hero is-light is-fullheight">
   <div class="hero-body">
     <div class="container">

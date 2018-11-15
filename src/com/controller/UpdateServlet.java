@@ -39,7 +39,7 @@ public class UpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession(false); //Session Created
 		String s1 = request.getParameter("fname");
 		String s2 = request.getParameter("lname");
 		String s3 = request.getParameter("email");
@@ -47,7 +47,6 @@ public class UpdateServlet extends HttpServlet {
 		int s5 = (int) session.getAttribute("rno"); 
 		
 		Register r=new Register();
-		//System.out.println("saveserv3");
 		r.setRno(s5);
 		r.setFname(s1);
 		r.setBal(s4);
@@ -60,7 +59,6 @@ public class UpdateServlet extends HttpServlet {
 		int j=db.updateData(lr);
 		if(j>0)
 		{
-			//System.out.println("test3");
 			session = request.getSession(true);
 			session.getAttribute("details");
 			response.sendRedirect("Updated.jsp");

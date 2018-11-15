@@ -30,6 +30,7 @@
 	</tr>
 	<c:forEach items="${requestScope.usrList}" var="e"> 		
 	<tr>
+		<!-- Takes value from usrList to display value -->
 		<td>${e.fname}</td>
 		<td>${e.lname}</td>
 		<td>${e.pass}</td>

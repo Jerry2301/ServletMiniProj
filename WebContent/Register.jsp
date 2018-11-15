@@ -24,7 +24,7 @@
       </h2>
     </div>
  </section>
-<form action="RegistrationServlet" method="post">
+<form action="RegistrationServlet" method="post">		<!-- Registration Form -->
 	<div class="field">
   	<label class="label"> <i class="fas fa-list-ol"></i> Registration Number</label>
  	 <div class="control">
