@@ -1,0 +1,17 @@
+create table register
+(rno number(10) not null,
+fname varchar2(300)not null,
+lname varchar2(300)not null,
+email varchar2(300)not null,
+pass varchar2(300)not null,
+bal number(10,5)not null
+);
+
+create table login
+( 
+email varchar2(300) not null,
+pass varchar2(300) not null);
+
+
+select * from login
+insert into login values ('user@user.com',user)

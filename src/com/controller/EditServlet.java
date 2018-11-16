@@ -30,6 +30,7 @@ public class EditServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		LinkedList<Object> lr = (LinkedList<Object>) session.getAttribute("details");
+		//Sets Session Attribute
 		session.setAttribute("first", lr.get(0));
 		session.setAttribute("last", lr.get(1));
 		session.setAttribute("address", lr.get(2));

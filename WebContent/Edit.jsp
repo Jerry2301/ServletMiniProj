@@ -12,6 +12,8 @@
 
 </head>
 <body>
+
+<!-- Session -->
 <%
 	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	if (session.getAttribute("fname")==null) {
@@ -20,6 +22,7 @@
 
 %> 
 <section>
+<!-- Navbar -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   
   <div id="navbarBasicExample" class="navbar-menu">
@@ -41,8 +44,9 @@
        </div>
     </div>
   </div>
-</nav>
-</section>
+</nav>	<!-- Navbar Ends -->
+</section>	<!-- Session Ends -->
+
 <div class="container column is-4">
  <section>
  

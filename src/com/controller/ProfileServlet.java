@@ -30,7 +30,7 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(true);	//Session
 		LinkedList<Object> lr = (LinkedList<Object>) session.getAttribute("details");
 		session.setAttribute("rno", lr.get(4));
 		session.setAttribute("first", lr.get(0));

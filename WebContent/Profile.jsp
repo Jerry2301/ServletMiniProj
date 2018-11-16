@@ -51,6 +51,8 @@
         My Profile
         <hr>
       </h1>
+      
+      <!-- Profile Page -->
       <div class="column is-half">
 		    <h1 class="title">Registration Number: </h1><h1 class="subtitle is-3"> <c:out value="${sessionScope.rno}"></c:out> </h1>
 			<h1 class="title">First Name: </h1><h1 class="subtitle is-3"> <c:out value="${sessionScope.first}"></c:out> </h1>

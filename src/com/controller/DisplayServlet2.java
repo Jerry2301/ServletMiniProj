@@ -21,16 +21,12 @@ public class DisplayServlet2 extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("dsplayserv1");
+		
 		DBApplication db=new DBApplication();
 		List<Register> lst=db.getAllData();
-		request.setAttribute("usrList",lst);
-		System.out.println("test1");
+		request.setAttribute("usrList",lst);	//Sets Session Attribute Value usrList
 		RequestDispatcher view = request.getRequestDispatcher("DisplayAll.jsp");
-		System.out.println("test2");
-		view.forward(request, response);
-		
-		
+		view.forward(request, response);	//Forwards Request and Response
 		
 		
 		

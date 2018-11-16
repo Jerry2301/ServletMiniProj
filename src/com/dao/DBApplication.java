@@ -23,9 +23,9 @@ public class DBApplication {
 	{
 		try
 		{
+			//Database Connection
 			Class.forName("oracle.jdbc.OracleDriver");
 			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Newuser123");
-			System.out.println("connection to db1");
 		}
 		catch(Exception e)
 		{
@@ -34,19 +34,17 @@ public class DBApplication {
 		return con;
 	}
 	
+	//Update Function
 	public int updateData(List<Register> lst)
 	{
 		int j=0;
-		//Account a=lst.get(0);
 		Register a=null;
 		con=myConnection();
 		try
 		{
 			Iterator<Register> itr=lst.iterator();
-			System.out.println("dbsave2");
 			while(itr.hasNext())
 			{
-				System.out.println("update1");
 				a=itr.next();
 				ps=con.prepareStatement("update registration set fname=?,lname=?,email=?,bal=? where rno=?");
 				ps.setString(1,a.getFname());
@@ -54,7 +52,6 @@ public class DBApplication {
 				ps.setString(3,a.getEmail());
 				ps.setDouble(4,a.getBal());
 				ps.setInt(5, a.getRno());
-				System.out.println("update2");
 				j = ps.executeUpdate();
 			}
 		}
@@ -75,6 +72,8 @@ public class DBApplication {
 		}
 		return j;
 	}
+	
+	//Insert Function
 	public int saveData(List<Register> lst)
 	{
 		/*System.out.println("dbsave1");*/
@@ -85,10 +84,8 @@ public class DBApplication {
 		try
 		{
 			Iterator<Register> itr=lst.iterator();
-			System.out.println("dbsave2");
 			while(itr.hasNext())
 			{
-				//System.out.println("dbsave3");
 				a=itr.next();
 				ps=con.prepareStatement("insert into Registration values(?,?,?,?,?,?)");
 				ps.setInt(1,a.getRno());
@@ -98,7 +95,6 @@ public class DBApplication {
 				ps.setString(5,a.getPass());
 				ps.setDouble(6,a.getBal());
 				
-				//System.out.println("saveData");
 				i = ps.executeUpdate();
 			}
 		}
@@ -131,7 +127,6 @@ public class DBApplication {
 			
 			
 			if(r.getEmail().equals(email)) {
-				System.out.println("found");
 				int rno = r.getRno();
 			    fname = r.getFname();
 			    String pass=r.getPass();
@@ -150,6 +145,8 @@ public class DBApplication {
 		
 		return info;
 	}
+	
+	//DisplayAll Validation
 	public List<Register> getAllData()
 	{
 
@@ -164,7 +161,6 @@ public class DBApplication {
 			rs=s.executeQuery("select * from Registration");
 			while(rs.next())
 			{
-				System.out.println("select1");
 				Register a=new Register();				
 				
 				a.setRno(rs.getInt(1));
@@ -174,7 +170,6 @@ public class DBApplication {
 				a.setPass(rs.getString(5));
 				a.setBal(rs.getDouble(6));
 				lst.add(a);
-				System.out.println("select2");
 			}
 		}
 		catch(Exception e)
@@ -183,6 +178,9 @@ public class DBApplication {
 		}
 		return lst;
 	}
+	
+	
+	//Validate Login
 	public boolean validateUser(Login l)
 	{
 		myConnection();
