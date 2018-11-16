@@ -45,7 +45,7 @@
   </div>
 </nav>
 <div class="container">
-      <h1 class="title">Welcome <c:out value="${sessionScope.fname}"></c:out></h1>
+      <h1 class="title">Welcome <c:out value="${sessionScope.fname}"></c:out>&nbsp;<c:out value="${sessionScope.lname}"></c:out></h1>
       <h2 class="subtitle">
         Greeting from us!
       </h2>
